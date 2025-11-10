@@ -4,7 +4,7 @@
 public class Patterns {
 
     public static void main(String[] args) {
-        stars(13);
+        stars(7);
         System.out.println("\n");
         triangle(9);
         System.out.println("\n");
@@ -12,22 +12,26 @@ public class Patterns {
         System.out.println("\n");
         eo(5);
         System.out.println("\n");
-        pyramid(6);
+        pyramid(5);
     }
-// Prints rows of stars and they increase by 2 after each line
+
+//Pre-condition Only takes a positive number
+//Post-condition Prints rows of stars and they increase by 2 after each line
     public static void stars(int rows) {
         int i = 1;
         while (i <= rows) {
             int j = 0;
-            while (j < i) {
+            while (j < (2*i-1)) {
                 System.out.print("*");
                 j++;
             }
             System.out.println();
-            i += 2;
+            i++;
         }
     }
 
+//Pre-condition Only takes a positive number
+//Post-condition Prints rows of numbers and the number increases by 1 after each row and the number of times the number appears in a row is the same as its row number
     public static void triangle(int rows) {
         int i = 1;
         while (i <= rows) {
@@ -41,6 +45,8 @@ public class Patterns {
         }
     }
 
+//Pre-condition Only takes a positive number
+//Post-condition Prints odd numbers and the #of times the number appears is equal to the number
     public static void odds(int start) {
         int i = start;
         if (i % 2 == 0) {
@@ -54,6 +60,8 @@ public class Patterns {
         }
     }
 
+//Pre-condition Only takes a positive number
+//Post-condition Prints "E" and "O" pattern and the letters change for every row. When "E" reaches halfway the pattern then goes in the reverse order
     public static void eo(int maxE) {
         String firstChar, secondChar = null;
 
@@ -92,7 +100,8 @@ public class Patterns {
         }
 
     }
-
+//Pre-condition Only takes a postive number
+//Post-condition: Prints a number pyramid and the #of numbers decreases by 2 after each row and the numbers also represent the row number
     public static void pyramid(int rows){
         int nTimes=rows*2-1;
         for(int i=1;i<=rows;i++){
@@ -105,7 +114,8 @@ public class Patterns {
         }
            
     }
-
+//Pre-condition: count >= 0
+//Post-condition: Prints a space
     public static void printSpaces(int count){
         for(int i=1;i<=count;i++){
             System.out.print(" ");
